@@ -7,7 +7,7 @@ tags: [tryhackme, reversing, ctf, malbuster]    # TAG names should be lowercase
 
 # Intro
 
-Hi folks, today we will solve Malbuster room from Tryhackme (https://tryhackme.com). Malbuster is 
+Hi folks, today we will solve Malbuster room from [Tryhackme](https://tryhackme.com). Malbuster is 
 basic room for malware analysis. Static analysis is a prerequisite to complete this room. Let's start
 
 # Scenario
@@ -66,7 +66,7 @@ Upon generating md5 hash of *malbuster_1* binary, we have our answer.
 
 3) *Using the hash, what is the number of detections of malbuster_1 in VirusTotal?*
 
-Virustotal (https://virustotal.com) is an online platform which lets you upload files/hashes/urls and scans your files/hashes/urls through multiple antivirus programs to see if any antivirus program has already identified this malware.
+Virustotal [https://virustotal.com](https://virustotal.com) is an online platform which lets you upload files/hashes/urls and scans your files/hashes/urls through multiple antivirus programs to see if any antivirus program has already identified this malware.
 
 Let's upload the hash which we generated in previous question on virustotal.
 
@@ -113,7 +113,7 @@ Tryhackme answer requires 5-digit name for the executable so the answer is obvio
 abuse.ch is also a online platform containing malware database where you can search for malware samples using hashes or malware family.
 
 Generated md5 hash of *malbuster_3* and uploaded it here:
-https://bazaar.abuse.ch/browse/
+[https://bazaar.abuse.ch/browse/](https://bazaar.abuse.ch/browse/)
 
 Upon searching on abuse.ch, I found malware signature for *malbuster_3*.
 
@@ -145,7 +145,7 @@ Upon checking strings content of malbuster_4, we have message present on first l
 
 10) *malbuster_4 imports the function ShellExecuteA. From which DLL file does it import this function?*
 
-At this point, we know that we can see list of DLLs and its imported functions on https://virustotal.com.
+At this point, we know that we can see list of DLLs and its imported functions on [https://virustotal.com](https://virustotal.com).
 
 VirusTotal shows all imported DLLs and functions on *DETAILS* tab.
 
