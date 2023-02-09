@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Malbuster - TryHackme Writeup
 date: 2023-02-09 10:03
 categories: [ctf, reversing]
