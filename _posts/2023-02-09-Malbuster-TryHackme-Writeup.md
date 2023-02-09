@@ -7,7 +7,7 @@ tags: [tryhackme, reversing, ctf, malbuster]    # TAG names should be lowercase
 
 # Intro
 
-Hi folks, today we will solve Malbuster room from Tryhackme. Malbuster is 
+Hi folks, today we will solve Malbuster room from Tryhackme (https://tryhackme.com). Malbuster is 
 basic room for malware analysis. Static analysis is a prerequisite to complete this room. Let's start
 
 # Scenario
