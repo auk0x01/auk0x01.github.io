@@ -196,6 +196,5 @@ Again repeating the previous process of finding string "Mozilla/4.0 (compatible;
 
 
 
-<br>
-<br>
+
 Thankyou for Reading
