@@ -101,9 +101,9 @@ Coming to the second obstacle. We see:
         return res.redirect("/?message=This system is currently only available to admins...");
 ```
 
-So, we will also have to make these 2 conditions true in order to ger the flag. 1st condition will automatically be true when we make our query return some valid "id". 2nd condition is quite interesting.
+So, we will also have to make these 2 conditions true in order to get the flag. 1st condition will automatically be true when we make our query return some valid "id". 2nd condition is quite interesting.
 
-Let's see how application handled admin functionality.
+Let's see how application handled admin functionality in the initial code.
 ```js
 const isAdmin = {};
 const newAdmin = users[Math.floor(Math.random() * users.length)];
