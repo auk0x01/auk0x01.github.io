@@ -11,7 +11,7 @@ So, I recently solved one web challenge from DiceCTF 2024. The name of the chall
 
 # Challenge
 
-So, we are given a login page. Looking at the source code, we see that this challenge is about SQLI.
+We are given a login page. Looking at the source code, we see that this challenge is about SQLI.
 ```js
 const express = require('express');
 const crypto = require('crypto');
