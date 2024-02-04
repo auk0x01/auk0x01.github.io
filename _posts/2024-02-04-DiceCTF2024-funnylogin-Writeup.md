@@ -91,7 +91,7 @@ We bypassed this piece of code.
         }
 ```
 
-It was checking the "id" and after our injected query which was returning "id", this condition returned false and did not return bypassing this condition. 
+It was checking the "id" and after our injected query which was returning "id", this condition returned false and did not return bypassing this check. 
 
 Coming to the second obstacle. We see:
 ```js
