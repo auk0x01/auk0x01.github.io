@@ -119,7 +119,7 @@ Here, en empty object "isAdmin" is being created. Then a randomly selected user 
         return res.redirect("/?message=This system is currently only available to admins...");
 ```
 If we try to return non-existing properties on an Object, it returns false. Now here's a catch, If an Object has ```__proto__``` property, then checking this in boolean context returns true.
-So, if ```Object[__proto__]``` returns true, then our final payload should be:
+So, if ```Object[__proto__]``` returns true, then final payload can be crafted like this:
 ```
 SELECT id FROM users WHERE username = '__proto__' AND password = '' OR id=1-- -';
 ```
