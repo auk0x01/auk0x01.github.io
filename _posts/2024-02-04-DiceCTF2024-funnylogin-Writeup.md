@@ -1,6 +1,6 @@
 ---
 title: DiceCTF-2024 funnylogin (Web Challenge) Writeup
-date: 2024-02-05 10:03
+date: 2024-02-04 10:03
 categories: [ctf, web]
 tags: [dicectf, web, ctf]    # TAG names should be lowercase
 ---
