@@ -21,7 +21,7 @@ timezone: Asia/Karachi
 
 title: auk0x01                          # the main title
 
-tagline: Pentester | CTF Player | Malware Analyst   # it will display as the sub-title
+tagline: Pentester | Red teamer | CTF Player   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A website to keep notes of my writeups and cheatsheets.
@@ -39,7 +39,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Adnan Ullah Khan
-  email: adnanullahkhan35@gmail.com             # change to your email address
+  #email:             # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/auk0x01      # change to your twitter homepage
