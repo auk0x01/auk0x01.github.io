@@ -127,7 +127,5 @@ SELECT id FROM users WHERE username = '__proto__' AND password = '' OR id=1-- -'
 Entering both, we got the flag.
 ![img](https://i.imgur.com/wip7IuY.jpeg)
 
-## **Question#7** ##
-
 
 Thankyou for Reading
