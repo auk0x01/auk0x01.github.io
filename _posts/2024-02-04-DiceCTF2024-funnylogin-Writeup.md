@@ -5,7 +5,7 @@ categories: [ctf, web]
 tags: [dicectf, web, ctf]    # TAG names should be lowercase
 ---
 
-So, I recently solved one web challenge from DiceCTF 2024. The name of the challenge is funnylogin. I loved the challenge as it required a little creativity. It took me 1 hour to solve this.
+So, I recently solved one web challenge from DiceCTF 2024. The name of the challenge is funnylogin. I loved the challenge as it required a little creativity.
 
 # Challenge
 
