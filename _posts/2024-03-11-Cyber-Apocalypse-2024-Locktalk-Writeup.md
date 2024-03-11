@@ -1,17 +1,17 @@
 ---
-title: LACTF-2024 (Web Challenges) Writeup
-date: 2024-02-17
+title: HTB Cyber Apocalypse 2024 (LockTalk) Writeup
+date: 2024-03-11
 categories: [ctf, web]
-tags: [lactf, web, ctf]    # TAG names should be lowercase
+tags: [cyberapocalypse, web, ctf]    # TAG names should be lowercase
 ---
 
-I recently played LACTF 2024 and managed to solve two web challenges. The name of the challenges are terms-and-conditions and flaglang.
+I solved LockTalk web challenge from HTB CyberApocalypse 2024 and here is the writeup for it.
 
-# Challenge #1 (terms-and-conditions):
+# Challenge:
 
-We are given a page. We have to click certain button but we can't due to funny CSS. Let's go look at the source.
+We are given a page showing different endpoints.
 
-![img](https://i.imgur.com/6oJiSQJ.jpeg)
+![img](https://i.imgur.com/ccjYIMa.png)
 
 We find a JS file "analytics.js" which seems to have been Obfuscated. De-obfuscated JS code from here: https://obf-io.deobfuscate.io/ and then simply pasted JS code on my browser and made alert popup with flag.
 
