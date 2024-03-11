@@ -13,96 +13,52 @@ We are given a page showing different endpoints.
 
 ![img](https://i.imgur.com/ccjYIMa.png)
 
-We find a JS file "analytics.js" which seems to have been Obfuscated. De-obfuscated JS code from here: https://obf-io.deobfuscate.io/ and then simply pasted JS code on my browser and made alert popup with flag.
+Our endgoal is to access /api/v1/flag endpoint with administrator JWT token. Let us now look at the source code of challenge.
 
-# Challenge #2 (flaglang):
+```python
+from flask import jsonify, current_app
+import python_jwt as jwt, datetime
+import json
+import os
 
-We have a NodeJS server with following code:
-```js
-const crypto = require('crypto');
-const fs = require('fs');
-const path = require('path');
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const yaml = require('yaml');
+from app.middleware.middleware import *
+from . import api_blueprint
 
-const yamlPath = path.join(__dirname, 'countries.yaml');
-const countryData = yaml.parse(fs.readFileSync(yamlPath).toString());
-const countries = new Set(Object.keys(countryData));
-const countryList = JSON.stringify(btoa(JSON.stringify(Object.keys(countryData))));
+JSON_DIR = os.path.join(os.path.dirname(__file__), 'json')
 
-const isoLookup = Object.fromEntries([...countries].map(name => [
-  countryData[name].iso,
-  {...countryData[name], name }
-]));
+@api_blueprint.route('/get_ticket', methods=['GET'])
+def get_ticket():
 
-
-const app = express();
-
-const secret = crypto.randomBytes(32).toString('hex');
-app.use(cookieParser(secret));
-
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
-
-app.get('/switch', (req, res) => {
-  if (!req.query.to) {
-    res.status(400).send('please give something to switch to');
-    return;
-  }
-  if (!countries.has(req.query.to)) {
-    res.status(400).send('please give a valid country');
-    return;
-  }
-  const country = countryData[req.query.to];
-  if (country.password) {
-    if (req.cookies.password === country.password) {
-      res.cookie('iso', country.iso, { signed: true });
+    claims = {
+        "role": "guest", 
+        "user": "guest_user"
     }
-    else {
-      res.status(400).send(`error: not authenticated for ${req.query.to}`);
-      return;
-    }
-  }
-  else {
-    res.cookie('iso', country.iso, { signed: true });
-  }
-  res.status(302).redirect('/');
-});
+    
+    token = jwt.generate_jwt(claims, current_app.config.get('JWT_SECRET_KEY'), 'PS256', datetime.timedelta(minutes=60))
+    return jsonify({'ticket: ': token})
 
-app.get('/view', (req, res) => {
-  if (!req.query.country) {
-    res.status(400).json({ err: 'please give a country' });
-    return;
-  }
-  if (!countries.has(req.query.country)) {
-    res.status(400).json({ err: 'please give a valid country' });
-    return;
-  }
-  const country = countryData[req.query.country];
-  const userISO = req.signedCookies.iso;
-  if (country.deny.includes(userISO)) {
-    res.status(400).json({ err: `${req.query.country} has an embargo on your country` });
-    return;
-  }
-  res.status(200).json({ msg: country.msg, iso: country.iso });
-});
 
-app.get('/', (req, res) => {
-  const template = fs.readFileSync(path.join(__dirname, 'index.html')).toString();
-  const iso = req.signedCookies.iso || 'US';
-  const country = isoLookup[iso];
-  res
-    .status(200)
-    .type('html')
-    .send(template
-      .replaceAll('$msg$', country.msg)
-      .replaceAll('$name$', country.name)
-      .replaceAll('$iso$', country.iso)
-      .replaceAll('$countries$', countryList)
-    );
-});
+@api_blueprint.route('/chat/<int:chat_id>', methods=['GET'])
+@authorize_roles(['guest', 'administrator'])
+def chat(chat_id):
 
-app.listen(3000);
+    json_file_path = os.path.join(JSON_DIR, f"{chat_id}.json")
+
+    if os.path.exists(json_file_path):
+        with open(json_file_path, 'r') as f:
+            chat_data = json.load(f)
+        
+        chat_id = chat_data.get('chat_id', None)
+        
+        return jsonify({'chat_id': chat_id, 'messages': chat_data['messages']})
+    else:
+        return jsonify({'error': 'Chat not found'}), 404
+
+
+@api_blueprint.route('/flag', methods=['GET'])
+@authorize_roles(['administrator'])
+def flag():
+    return jsonify({'message': current_app.config.get('FLAG')}), 200
 ```
 Our goal is to exploit the /view endpoint 
 
