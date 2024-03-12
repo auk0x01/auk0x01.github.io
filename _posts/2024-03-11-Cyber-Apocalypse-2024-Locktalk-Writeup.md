@@ -11,7 +11,7 @@ I solved LockTalk web challenge from HTB CyberApocalypse 2024 and here is the wr
 
 We are given a page showing different endpoints.
 
-![img](https://i.imgur.com/ccjYIMa.png)
+![img](https://i.imgur.com/wXkljdj.jpeg)
 
 Our endgoal is to access /api/v1/flag endpoint with administrator JWT token. Let us now look at the source code of challenge.
 
