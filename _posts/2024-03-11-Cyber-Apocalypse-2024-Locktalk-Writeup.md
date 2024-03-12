@@ -100,5 +100,6 @@ Accessing this endpoint, application generated a JWT token for us.
 
 Now we can pass this token to our exploit. As "/api/v1/flag" endpoint is only accessible through "administrator", we modify the value of "role" in our exploit from "guest" to "administrator". Exploit will then generate a JWT token with modified claims. Accessing the "/api/v1/flag" with generated JWT gives you the flag.
 
+
 Thankyou for Reading
 
