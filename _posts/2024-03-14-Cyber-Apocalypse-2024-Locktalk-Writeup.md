@@ -1,6 +1,6 @@
 ---
 title: HTB Cyber Apocalypse 2024 (LockTalk) Writeup
-date: 2024-03-11
+date: 2024-03-14
 categories: [ctf, web]
 tags: [cyberapocalypse, web, ctf]    # TAG names should be lowercase
 ---
