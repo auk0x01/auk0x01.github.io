@@ -5,7 +5,7 @@ categories: [ctf, web]
 tags: [htb, web, ctf]    # TAG names should be lowercase
 ---
 
-Hello folks, some months ago, I developed a web challenge for Hackthebox - Saturn. It got retired some days ago so I thought to publish the writeup with the solution. You can check out the challenge from here: [https://app.hackthebox.com/challenges/saturn](https://app.hackthebox.com/challenges/saturn)
+Hello folks, some months ago, I developed a web exploitation challenge for Hackthebox - Saturn. It got retired some days ago so I thought to publish the writeup with the solution. You can check out the challenge from here: [https://app.hackthebox.com/challenges/saturn](https://app.hackthebox.com/challenges/saturn)
 
 # Challenge:
 
