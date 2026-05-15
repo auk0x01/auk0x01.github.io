@@ -13,8 +13,8 @@ DVWA is a web application which have a lot of vulnerabilities in it. You can pra
 The whole setup process is very straightforward. I am setting up DVWA on Windows 10, but this setup is also the same for previous Windows versions. So let’s start.
 
 First of all, here's what we need:
-1) Xampp (for hosting our local Apache Server)
-2) DVWA (from Github)
+- Xampp (for hosting our local Apache Server)
+- DVWA (from Github)
 
 ### Downloading and setting up Xampp:
 First of all, go to [https://www.apachefriends.org/](https://www.apachefriends.org/) and download XAMPP for Windows. An executable will be downloaded to your computer. Double click on it and setup XAMPP server while clicking on Next, Next … :)
