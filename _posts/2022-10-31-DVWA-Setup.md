@@ -1,3 +1,10 @@
+---
+title: Setup Damn Vulnerable Web Application (DVWA) in Windows
+date: 2022-10-31 8:07
+categories: [web]
+tags: [web]    # TAG names should be lowercase
+---
+
 Today, we are going to look at how you can set up DVWA in Windows. Before starting to look into our setup process, I wanna give an introduction to DWVA to those who do not know anything about it.
 
 DVWA is a web application which have a lot of vulnerabilities in it. You can practice your bug hunting and penetration testing skills on it. This application has nearly all the bugs of OWASP 10. So it was a tiny introduction :) Without further wasting your time, I am going through the setup process.
